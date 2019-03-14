@@ -59,17 +59,17 @@ services:
         condition: none
 
   dispatcher:
-    image: registry-special.tenforce.com/special/demonstrator-dispatcher:kong
+    image: registry-special.tenforce.com/special/demonstrator-dispatcher:2.0.0
     command: ["/caddy", "-conf", "/config/Caddyfile", "-agree=true"]
     environment:
       DOMAIN: $DOMAIN
       PROXY_TO: $PROXY_TO
-      EMAIL: $KEYCLOAK_EMAIL
+      EMAIL: $RECOVERY_EMAIL
     volumes:
     - caddycert:/root/.caddy/acme
     ports:
-    - "80:2015"
-    - "443:443"
+    - "81:2015"
+    - "82:443"
     logging: *default-logging
     deploy: *default-deploy
 
