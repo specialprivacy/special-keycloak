@@ -59,7 +59,7 @@ services:
         condition: none
 
   dispatcher:
-    image: registry-special.tenforce.com/special/demonstrator-dispatcher:2.0.0
+    image: registry-special.tenforce.com/special/demonstrator-dispatcher:2.0.1
     command: ["/caddy", "-conf", "/config/Caddyfile", "-agree=true"]
     environment:
       DOMAIN: $DOMAIN
