@@ -62,3 +62,8 @@ volumes:
   caddycert: {}
   keycloakdb:
     driver: local
+
+networks:
+  default:
+    external:
+      name: special-demonstrator
