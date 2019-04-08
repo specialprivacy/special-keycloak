@@ -58,21 +58,6 @@ services:
       restart_policy:
         condition: none
 
-  dispatcher:
-    image: registry-special.tenforce.com/special/demonstrator-dispatcher:2.0.3
-    command: ["/caddy", "-conf", "/config/Caddyfile", "-agree=true"]
-    environment:
-      DOMAIN: $DOMAIN
-      PROXY_TO: $PROXY_TO
-      EMAIL: $RECOVERY_EMAIL
-    volumes:
-    - caddycert:/root/.caddy/acme
-    ports:
-    - "81:2015"
-    - "82:443"
-    logging: *default-logging
-    deploy: *default-deploy
-
 volumes:
   caddycert: {}
   keycloakdb:
