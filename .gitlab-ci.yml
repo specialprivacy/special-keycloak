@@ -23,7 +23,7 @@ validate:
     # Validate regular local deploy
     - docker-compose config
     # Validate swarm deploy
-    - docker-compose -f docker-compose.yml -f docker-compose.production.yml config
+    - docker-compose -f docker-compose.yml config
 
 publish-github:
   stage: publish
