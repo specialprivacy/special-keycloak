@@ -21,9 +21,9 @@ validate:
     entrypoint: [""]
   script:
     # Validate regular local deploy
-    - KEYCLOAK_ENDPOINT=localhost docker-compose config
+    - docker-compose config
     # Validate swarm deploy
-    - KEYCLOAK_ENDPOINT=test.example.com KEYCLOAK_PASSWORD=test RECOVERY_EMAIL=test@example.com docker-compose -f docker-compose.yml -f docker-compose.production.yml config
+    - docker-compose -f docker-compose.yml -f docker-compose.production.yml config
 
 publish-github:
   stage: publish
