@@ -37,7 +37,7 @@ publish-github:
     - git push ${GITHUB_REMOTE} master
   only:
     - master
-# Two seperate jobs so both remotes can be offline / fail without impacting the other sync job
+# Two separate jobs so both remotes can be offline / fail without impacting the other sync job
 publish-vienna:
   stage: publish
   variables:
